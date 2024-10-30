@@ -1,0 +1,501 @@
+
+
+/* Main Promo Section */
+.promo-section {
+    background-color: #e4c8a3; /* Light beige color */
+    padding: 60px 0; /* Vertical padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container Styling */
+.promo-container {
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Even spacing */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1100px; /* Limit width */
+    width: 90%; /* Responsive width */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Circular Image */
+.promo-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.promo-image img {
+    width: 290px; /* Adjusted size */
+    height: 290px;
+    border-radius: 50%;
+    border: 5px solid #92694d;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* Content Styling */
+.promo-content {
+    flex: 1;
+    text-align: center; /* Center text */
+    z-index: 2;
+    padding: 20px;
+}
+
+.promo-title {
+    font-family: 'Arial';
+    font-size: 1.2rem;
+    color: #8c5b36;
+    margin: 0;
+}
+
+.promo-subtitle {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8c5b36;
+    margin: 10px 0;
+}
+
+.promo-btn {
+    background-color: #8d5736;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.promo-btn:hover {
+    background-color: #71462b;
+}
+
+/* Decorative Shapes */
+.promo-section::before,
+.promo-section::after {
+    content: '';
+    position: absolute;
+    background-color: #8c5b36;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.promo-section::before {
+    width: 250px;
+    height: 250px;
+    top: -75px;
+    left: -75px;
+    background-color: #d4b89f;
+}
+
+.promo-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    background-color: #8c5b36;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .promo-container {
+        flex-direction: column;
+    }
+
+    .promo-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .promo-btn {
+        margin-top: 20px;
+    }
+}
+
+
+/* Product Card Styling */
+
+
+
+/* General Section Styling */
+.product-grid-section {
+    padding: 40px 20px;
+    background-color: #e0bd8e; /* Light background */
+    text-align: center; /* Center the title */
+}
+
+.allcategory {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #81522d; /* Brown color */
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 40px; /* Space between cards */
+    max-width: 1200px; /* Limit max width */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Individual Product Card */
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Circular Image with Frame */
+.product-image {
+    width: 160px; /* Increase size for larger card */
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #8c5b36; /* Frame color */
+    margin: 0 auto 15px; /* Center image and add space at the bottom */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure image fills circle */
+}
+
+/* Product Information */
+.product-info {
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.4rem; /* Larger font size */
+    color: #8c5b36; /* Brown color */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-sizes {
+    font-size: 1rem;
+    color: #333; /* Dark text */
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
+}
+
+
+/* General Section Styling */
+.feedback-carousel-section {
+    background-color: #e4c8a3; /* Purple background */
+    padding: 60px 20px;
+    color: #71462b;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+
+    text-align: center;
+    position: relative;
+}
+
+
+.feedback-carousel-header h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Carousel Wrapper */
+.feedback-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 300px; /* Fixed height for the cards */
+}
+
+/* Individual Feedback Card */
+.feedback-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.8);
+    visibility: hidden;
+}
+
+.feedback-card.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    visibility: visible;
+    z-index: 3;
+}
+
+.feedback-card.next {
+    opacity: 0.8;
+    transform: scale(0.9) translateX(100px);
+    visibility: visible;
+    z-index: 2;
+}
+
+.feedback-card.prev {
+    opacity: 0.8;
+    transform: scale(0.9) translateX(-100px);
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Feedback Content */
+.feedback-card-content {
+    text-align: center;
+}
+
+.feedback-author-photo {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.feedback-card p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.feedback-stars {
+    color: #f2b01e; /* Gold color for stars */
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Carousel Dots */
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.carousel-dot.active,
+.carousel-dot:hover {
+    background-color: #71462b; /* Active or hovered dot color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-card {
+        width: 250px;
+    }
+
+    .feedback-carousel-header h2 {
+        font-size: 1.8rem;
+       
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #8c5b36;
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-icons a, .footer-icons span {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icons i {
+    margin-right: 5px;
+}
+
+.footer-info {
+    text-align: right;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    padding: 10px;
+}
+
+.footer-info h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.footer-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .promo-container {
+        flex-direction: column;
+    }
+
+    .promo-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .promo-btn {
+        margin-top: 20px;
+    }
+}
+
+/* Container Styling */
+#category {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #e4c8a3; /* Light pink background */
+}
+
+/* Make each category card circular with brown border */
+.category-card {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #f7f7f7; /* Light background for circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c5b36; /* Brown text color */
+    text-decoration: none;
+    border: 3px solid #8c5b36; /* Brown border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 15px; /* Spacing between circles */
+}
+
+/* Layout the category circles in a row */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between circles */
+    flex-wrap: wrap; /* Wrap circles on smaller screens */
+}
+
+/* Animation effect on hover */
+.category-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Center the card title inside the circle */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8c5b36; /* Brown color for the text */
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Text color change on hover */
+.category-card:hover .card-title {
+    color: #663d19; /* Lighter pink color on hover */
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .category-card {
+        width: 120px;
+        height: 120px;
+    }
+    .row {
+        gap: 15px; /* Reduce gap on smaller screens */
+    }
+}
+
+/* Styling for the Shop Now button */
+/* Styling for the Shop Now button */
+.shop-btn {
+    background-color: #8c5b36; /* Brown color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 30px; /* Adjust padding as needed */
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 200px; /* Custom width for a larger button */
+    height: 40px; /* Custom height for a flatter button */
+    font-family: 'Arial', sans-serif;
+    line-height: 1; /* Ensures text stays on one line */
+    white-space: nowrap; /* Prevents text from wrapping */
+    display: inline-block; /* Ensures it stays inline */
+    text-align: center; /* Centers the text horizontally */
+}
+
+/* Hover effect for the button */
+.shop-btn:hover {
+    background-color: #71462b; /* Darker brown for hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}

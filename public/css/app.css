@@ -1,0 +1,201 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* General Header Styling */
+.header {
+    width: 100%;
+    background-color: #8c5b36; /* Dark brown top bar */
+    color: #fff;
+}
+
+.top-bar {
+    background-color: #8c5b36; /* Dark brown */
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.top-bar p {
+    margin: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #fff; /* White background */
+    border-bottom: 1px solid #ddd; /* Subtle bottom border */
+    padding: 10px 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Center Logo Styling */
+.logo {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #8c5b36; /* Dark brown */
+}
+
+.logo a {
+    text-decoration: none;
+    color: #8c5b36;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spacing between links */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #8c5b36;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #71462b; /* Slightly darker on hover */
+}
+
+/* Icons Section */
+.nav-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-icons a {
+    text-decoration: none;
+    color: #8c5b36;
+    font-size: 1.2rem;
+}
+
+.nav-icons a:hover {
+    color: #71462b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .nav-icons {
+        margin-top: 10px;
+    }
+}
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer-info {
+        padding: 0;
+    }
+
+
+
+    /* Footer Styling */
+.footer {
+    background-color: #8c5b36;
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-icons a, .footer-icons span {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icons i {
+    margin-right: 5px;
+}
+
+.footer-info {
+    text-align: right;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    padding: 10px;
+}
+
+.footer-info h4 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.footer-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-container .fas.fa-shopping-cart {
+    font-size: 24px; /* Adjust icon size if necessary */
+}
+
+.cart-container .cart-count {
+    position: absolute;
+    top: -8px; /* Adjust to position above the cart */
+    right: -10px; /* Adjust to position correctly relative to the icon */
+    background-color: black;
+    color: white;
+    padding: 2px 8px; /* Add more padding for a notification-like shape */
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    border-radius: 12px; /* Rounded ends to give it a notification style */
+}
+
+
+
+

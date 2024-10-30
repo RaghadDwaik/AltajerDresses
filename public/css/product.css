@@ -1,0 +1,175 @@
+/* General Section Styling */
+.product-grid-section {
+    padding: 40px 20px;
+    background-color: #f3e5dc;
+    text-align: center;
+}
+
+/* Grid Layout with Four Columns */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four items per row */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Product Card Layout */
+.product-card {
+    background-color: #f3e5dc;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width within grid cell */
+    height: 100%; /* Full height within grid cell */
+    margin: 0; /* Remove any external spacing */
+    padding: 0; /* Remove internal spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Container with Full Coverage */
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Set to cover the full height of the card */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container fully, but may crop the image slightly */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Product Information */
+.product-info {
+    padding: 15px;
+    background-color: #f3e5dc;
+    text-align: left;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8a683c;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #8c5b36;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Love Icon */
+.product-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.love-icon {
+    background: none;
+    border: none;
+    outline: none;
+    color: #e74c3c;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.love-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* One column per row on small screens */
+    }
+}
+
+/* Remove underline from links inside the product info */
+.product-info a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep original color */
+}
+
+/* Styling the New Collections Heading */
+.allcategory {
+    font-family: 'Monospace	'; /* New font */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #8c5b36; /* Brown color to match theme */
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Initially hidden for animation */
+    animation: fadeInSlide 1s ease forwards;
+}
+
+/* Animation: Fade in and Slide up */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding subtle underlining effect */
+.allcategory::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background-color: #f3e5dc; /* Beige color */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: underlineEffect 1s ease forwards 1.2s; /* Delay to sync with fade-in */
+}
+
+@keyframes underlineEffect {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 60%;
+        opacity: 1;
+    }
+}

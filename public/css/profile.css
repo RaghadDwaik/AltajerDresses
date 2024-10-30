@@ -1,0 +1,122 @@
+/* profile.css */
+
+/* Profile Section */
+.profile-section {
+    background-color: #f3e5dc; /* Light beige */
+    padding: 80px 0;
+}
+
+/* Profile Container */
+.profile-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Profile Image */
+.profile-image {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8c5b36; /* Border color */
+}
+
+.edit-photo-btn {
+    display: inline-block;
+    margin-top: 10px;
+    color: #8c5b36; /* Pencil color */
+    cursor: pointer;
+}
+
+/* Form Styles */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure full width */
+}
+
+/* Labels */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Full width */
+}
+
+/* Edit Icons */
+.edit-icon {
+    margin-left: 10px;
+    color: #8c5b36; /* Pencil color */
+    cursor: pointer;
+}
+
+/* Update Profile Button */
+.update-profile-btn {
+    background-color: #8c5b36; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.update-profile-btn:hover {
+    background-color: #71462b; /* Darker on hover */
+}
+
+/* Logout Section */
+.logout-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.logout-btn {
+    background-color: #71462b; /* Red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-image img {
+        width: 120px;
+        height: 120px;
+    }
+}

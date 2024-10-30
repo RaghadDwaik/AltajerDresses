@@ -1,0 +1,94 @@
+/* Main container styling */
+.container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 20px auto; /* Center the container horizontally with top/bottom margin */
+    padding: 20px; /* Padding inside the container */
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem; /* Larger font size for main heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Darker color for better contrast */
+}
+
+h3, h4 {
+    color: #555; /* Medium grey color for subheadings */
+    margin-top: 20px; /* Space above subheadings */
+}
+
+/* Alert styling */
+.alert {
+    padding: 15px; /* Padding inside alert boxes */
+    border-radius: 5px; /* Rounded corners for alerts */
+    margin-bottom: 20px; /* Space below alerts */
+    font-size: 1.1rem; /* Slightly larger font for alerts */
+}
+
+/* Specific alert colors */
+.alert-success {
+    background-color: #d4edda; /* Light green background for success messages */
+    color: #155724; /* Dark green text color */
+    border: 1px solid #c3e6cb; /* Green border */
+}
+
+/* Products section */
+.order-products {
+    margin-top: 20px; /* Space above products section */
+    border: 1px solid #ccc; /* Border around the products section */
+    padding: 10px; /* Padding inside the products section */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Individual product item */
+.order-product {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space between products */
+    padding: 10px; /* Padding for each product item */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+/* Product image */
+.order-product img {
+    width: 100px; /* Fixed width for product images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Product details section */
+.product-details {
+    margin-left: 15px; /* Space between image and details */
+}
+
+/* Total price styling */
+h4 {
+    font-weight: bold; /* Bold text for total price */
+}
+
+/* General styling for paragraphs */
+p {
+    margin: 5px 0; /* Margin above and below paragraphs */
+    color: #333; /* Darker text color for better readability */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .order-product {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .product-details {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Add space above details */
+    }
+
+    .order-product img {
+        width: 80%; /* Adjust image size on small screens */
+    }
+}
