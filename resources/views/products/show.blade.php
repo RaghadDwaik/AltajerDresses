@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/product-details.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     .size-color-item {
@@ -142,6 +143,34 @@
             </form>
         </div>
     </div>
+
+
+    <!-- Products You May Like Section -->
+<div class="related-products-container mt-5">
+    <h3 class="related-products-title">Products You May Like</h3>
+    <div class="related-products-grid">
+        @foreach($relatedProducts as $relatedProduct)
+            <div class="related-product-card">
+                <!-- Clickable Image Container -->
+                <a href="{{ route('products.show', ['id' => $relatedProduct->id]) }}">
+                    <img src="{{ asset(json_decode($relatedProduct->images)[0] ?? 'images/home/dress1.jpeg') }}" class="related-product-image" alt="{{ $relatedProduct->product_name }}">
+                </a>
+
+                <!-- Product Info -->
+                <div class="related-product-info">
+                    <a href="{{ route('products.show', ['id' => $relatedProduct->id]) }}" class="text-decoration-none">
+                        <h5 class="related-product-title">{{ $relatedProduct->product_name }}</h5>
+                    </a>
+                    <p class="related-product-price">${{ number_format($relatedProduct->price, 2) }}</p>
+                    <button class="love-icon" onclick="toggleLove(event, {{ $relatedProduct->id }})">
+                        <i class="fa fa-heart-o"></i>
+                    </button>
+                </div>
+            </div>
+        @endforeach
+    </div>
+</div>
+
 </div>
 
 <!-- JavaScript to handle image switching and form validation -->
@@ -196,5 +225,9 @@
             }
         });
     });
+
+    
 </script>
+
+
 @endsection

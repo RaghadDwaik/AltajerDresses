@@ -8,13 +8,8 @@ class ProductData extends Model
 {
     protected $table = 'product_datas';
     
-    protected $fillable = [
-        
-        'products_id',
-        'size',
-        'color',
-        'stock_quantity',
-    ];
+    protected $fillable = ['size', 'color', 'stock_quantity'];
+
 
     public function product()
     {

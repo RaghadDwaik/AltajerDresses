@@ -3,9 +3,27 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<style>
+    /* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.2s; }
+.fade-in-delay-2 { animation-delay: 0.4s; }
+.fade-in-delay-3 { animation-delay: 0.6s; }
+.fade-in-delay-4 { animation-delay: 0.8s; }
+.fade-in-delay-5 { animation-delay: 1s; }
+
+</style>
 <!-- First Section -->
-<div class="promo-section">
+<div class="promo-section fade-in fade-in-delay-1">
     <div class="promo-container">
         <div class="promo-image">
             <img src="{{ asset('/images/home/dress3.jpeg') }}" alt="New Arrivals">
@@ -26,7 +44,7 @@
 
 
 <!-- All Category Section -->
-<div class="container mt-5 all" id="category">
+<div class="container mt-5 all fade-in fade-in-delay-2" id="category">
     <h2 class="allcategory">All Categories</h2>
     <div class="row">
         @foreach($categories as $category)
@@ -43,37 +61,41 @@
 <!-- End All Category Section -->
 
 
-<!-- Best Seller Section -->
-<section class="product-grid-section">
+<!-- All Products Section -->
+<section class="product-grid-section fade-in fade-in-delay-3">
     <h2 class="allcategory">Products</h2>
     <div class="product-grid">
-    @foreach($products as $product)
-    <div class="product-card">
-        <div class="product-image">
-            @php
-                $images = json_decode($product->images, true); // Decode the JSON to an array
-                $firstImage = is_array($images) && count($images) > 0 ? $images[0] : 'default.jpg'; // Get the first image or use a default
-            @endphp
-            <img src="{{ asset($firstImage) }}" alt="{{ $product->product_name }}">
+        @foreach($products as $product)
+        <div class="product-card">
+            <div class="product-image">
+                @php
+                    $images = json_decode($product->images, true); // Decode the JSON to an array
+                    $firstImage = is_array($images) && count($images) > 0 ? $images[0] : 'default.jpg'; // Get the first image or use a default
+                @endphp
+                <img src="{{ asset($firstImage) }}" alt="{{ $product->product_name }}">
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">{{ $product->product_name }}</h3>
+                <p class="product-description">{{ $product->description }}</p>
+                <p class="product-price">${{ number_format($product->price, 2) }}</p>
+            </div>
         </div>
-        <div class="product-info">
-            <h3 class="product-name">{{ $product->product_name }}</h3>
-            <p class="product-description">{{ $product->description }}</p>
-            <p class="product-price">${{ number_format($product->price, 2) }}</p>
-        </div>
+        @endforeach
     </div>
-@endforeach
 
-
+    <!-- Show All Button -->
+    <div class="show-all-container">
+    <a href="{{ route('products.index') }}" class="show-all-button">Show All</a>
     </div>
 </section>
+
 
 <!-- End Best Seller Section -->
 
 
 
 <!-- FeedBack Section -->
-<section class="feedback-carousel-section" id ="feedback">
+<section class="feedback-carousel-section fade-in fade-in-delay-4" id="feedback">
     <div class="feedback-carousel-header">
         <h2>Feedback From Our Customers</h2>
     </div>
@@ -182,8 +204,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the first card initially
     showCard(currentIndex);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeInElements = document.querySelectorAll(".fade-in");
+
+    function handleScrollAnimation() {
+        fadeInElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation(); // Trigger animation on load
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const productCards = document.querySelectorAll(".product-card");
+
+    function animateProductCards() {
+        productCards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                card.classList.add("slide-in-up");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", animateProductCards);
+    animateProductCards(); // Trigger animation on load
+});
+
 </script>
 <!-- End FeedBack Section -->
+
+
 
 
 @endsection

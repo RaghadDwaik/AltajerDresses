@@ -173,3 +173,56 @@
         opacity: 1;
     }
 }
+
+
+/* Toast Container */
+.toast-container {
+    position: fixed;
+    bottom: 20px; /* Position at the bottom; change to 'top' for top positioning */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: auto;
+    max-width: 90%; /* Limit width for smaller screens */
+    padding: 10px 20px;
+    background-color: #8c5b36; /* Match with theme color */
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Hidden initially for fade-in effect */
+    pointer-events: none; /* Prevent interaction during fade-in/out */
+    animation: fadeInOut 3s ease forwards;
+    text-align: center;
+}
+
+/* Toast Fade-In and Fade-Out Animation */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px); /* Slide up from bottom */
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translate(-50%, 0); /* Show fully */
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 20px); /* Slide back down */
+    }
+}
+
+/* For Success Messages */
+.toast-success {
+    background-color: #28a745; /* Green for success */
+}
+
+/* For Error Messages */
+.toast-error {
+    background-color: #dc3545; /* Red for error */
+}
+
+/* For Info Messages */
+.toast-info {
+    background-color: #007bff; /* Blue for information */
+}

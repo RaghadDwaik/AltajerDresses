@@ -143,7 +143,7 @@ class CartController extends Controller
         }
     
         // Reduce the stock quantity of the product variant
-        $productData->stock_quantity -= $quantity;
+       // $productData->stock_quantity -= $quantity;
         $productData->save();
     
         // Update the order's total amount
@@ -166,7 +166,7 @@ class CartController extends Controller
     $editProduct = null;
     if ($request->has('editProduct')) {
         $editProductId = $request->get('editProduct');
-        $editProduct = Product::with('productData')->find($editProductId);
+        $editProduct = Products::with('productData')->find($editProductId);
     }
 
     return view('mainfiles.cart', compact('orders', 'cartCount', 'editProduct'));
