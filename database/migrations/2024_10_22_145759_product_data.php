@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('products_id')->constrained()->onDelete('cascade');
             $table->string('size');
             $table->string('color');
+            $table->string('image')->nullable();
             $table->integer('stock_quantity')->default(0);
             $table->timestamps();
         });

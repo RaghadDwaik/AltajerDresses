@@ -48,10 +48,26 @@
                 </div>
 
                 <!-- Login Button -->
-                <div class="flex justify-center">
+                <div class="flex justify-center mb-4">
                     <button type="submit" class="login-btn">Log in</button>
                 </div>
             </form>
+
+            <!-- OR Section -->
+            <div class="flex items-center justify-center my-4">
+                <div class="w-1/3 h-px bg-gray-300"></div>
+                <span class="mx-2 text-gray-500">or login with</span>
+                <div class="w-1/3 h-px bg-gray-300"></div>
+            </div>
+
+            <!-- Sign in with Google -->
+           <!-- Sign in with Gmail Button -->
+<div class="flex justify-center mt-4">
+    <a href="{{ route('auth.google') }}" class="google-signin-btn">
+        <i class="fab fa-google"></i>
+    </a>
+</div>
+
         </div>
     </div>
 </body>

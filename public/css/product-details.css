@@ -182,7 +182,7 @@
 }
 
 .quantity-controls button:hover {
-    background-color: #8B4513 !important;
+    background-color:#BEBEBE	 !important;
 }
 
 .quantity-controls input {
@@ -321,4 +321,73 @@
 /* Hover effect for a darker shade */
 .love-icon:hover {
     color: #e63946; /* Slightly darker red on hover */
+}
+/* Styling for all size buttons */
+
+/* General styling for size buttons */
+.size-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    opacity: 1; /* Default opacity */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for in-stock sizes */
+.size-btn:not(.sold-out):hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Styling for sold-out sizes */
+.size-btn.sold-out {
+    background-color: grey; /* Grey background for sold-out sizes */
+    color: white; /* White text for contrast */
+    cursor: not-allowed; /* Disabled cursor */
+    opacity: 0.6; /* Make it semi-transparent */
+    border-color: #ddd; /* Light border for sold-out sizes */
+}
+
+/* Optional: Add a strike-through effect for sold-out sizes */
+
+.product-image-wrapper {
+    position: relative;
+}
+
+.stock-status-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none;
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.stock-status-overlay.sold-out {
+    opacity: 1; /* Show overlay */
+}
+
+.stock-status-overlay.last-one {
+    opacity: 1; /* Show overlay */
+}
+button.disabled {
+    background-color: #d3d3d3; /* Grey background */
+    cursor: not-allowed; /* Show not-allowed cursor */
+    pointer-events: none; /* Disable clicks */
 }

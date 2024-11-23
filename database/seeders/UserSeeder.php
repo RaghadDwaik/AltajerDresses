@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'name' => 'raghad dwaik',
                 'email' => 'raghad.dwaik@gmail.com',
                 'password' => bcrypt('password123'),
-                'phone-num'=>'0595442943',
+                'phone_num'=>'0595442943',
                 'address'=>'ramallah',
             ]
            

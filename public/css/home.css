@@ -556,3 +556,54 @@
 .show-all-button:hover {
     background-color: #947950;
 }
+/* Style for clickable product card */
+.product-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Make the entire link area clickable */
+.product-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/* Image styling with hover effect */
+.product-image img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* Title and description styling */
+.product-name,
+.product-description {
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+    color: #8c5b36; /* Change color on hover */
+    font-weight: bold;
+}
+
+.product-card:hover .product-description {
+    color: #71462b; /* Change color on hover */
+}
+

@@ -20,8 +20,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress2.jpeg', 'images/home/dress4.jpeg']),
                 'category_id' => 1,
                 'variants' => json_encode([
-                    ['size' => 38, 'color' => 'Black', 'stock_quantity' => 20],
-                    ['size' => 40, 'color' => 'White', 'stock_quantity' => 15],
+                    ['size' => 38, 'color' => 'Black', 'stock_quantity' => 20, 'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 40, 'color' => 'White', 'stock_quantity' => 15, 'image' => 'images/home/dress4.jpeg'],
                 ]),
             ],
             [
@@ -32,8 +32,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress2.jpeg', 'images/home/dress2.jpeg']),
                 'category_id' => 2,
                 'variants' => json_encode([
-                    ['size' => 36, 'color' => 'Cream', 'stock_quantity' => 50],
-                    ['size' => 38, 'color' => 'Black', 'stock_quantity' => 50],
+                    ['size' => 36, 'color' => 'Cream', 'stock_quantity' => 50,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 38, 'color' => 'Black', 'stock_quantity' => 50,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -44,8 +44,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress3.jpeg']),
                 'category_id' => 3,
                 'variants' => json_encode([
-                    ['size' => 40, 'color' => 'Yellow', 'stock_quantity' => 20],
-                    ['size' => 42, 'color' => 'Pink', 'stock_quantity' => 15],
+                    ['size' => 40, 'color' => 'Yellow', 'stock_quantity' => 20,'image' => 'images/home/dress1.jpeg'],
+                    ['size' => 42, 'color' => 'Pink', 'stock_quantity' => 15,'image' => 'images/home/dress3.jpeg'],
                 ]),
             ],
             [
@@ -56,8 +56,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress1.jpeg']),
                 'category_id' => 4,
                 'variants' => json_encode([
-                    ['size' => 'M', 'color' => 'Blue', 'stock_quantity' => 40],
-                    ['size' => 'L', 'color' => 'Gray', 'stock_quantity' => 30],
+                    ['size' => 'M', 'color' => 'Blue', 'stock_quantity' => 40,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'L', 'color' => 'Gray', 'stock_quantity' => 30,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -68,8 +68,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress4.jpeg']),
                 'category_id' => 1,
                 'variants' => json_encode([
-                    ['size' => 'S', 'color' => 'Black', 'stock_quantity' => 10],
-                    ['size' => 'M', 'color' => 'Navy', 'stock_quantity' => 15],
+                    ['size' => 'S', 'color' => 'Black', 'stock_quantity' => 10,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'M', 'color' => 'Navy', 'stock_quantity' => 15,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -80,8 +80,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress1.jpeg']),
                 'category_id' => 2,
                 'variants' => json_encode([
-                    ['size' => 'M', 'color' => 'Blue', 'stock_quantity' => 20],
-                    ['size' => 'L', 'color' => 'Light Blue', 'stock_quantity' => 25],
+                    ['size' => 'M', 'color' => 'Blue', 'stock_quantity' => 20,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'L', 'color' => 'Light Blue', 'stock_quantity' => 25,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -92,8 +92,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress3.jpeg']),
                 'category_id' => 3,
                 'variants' => json_encode([
-                    ['size' => 42, 'color' => 'White', 'stock_quantity' => 30],
-                    ['size' => 44, 'color' => 'Black', 'stock_quantity' => 25],
+                    ['size' => 42, 'color' => 'White', 'stock_quantity' => 30,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 44, 'color' => 'Black', 'stock_quantity' => 25,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -104,8 +104,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress2.jpeg']),
                 'category_id' => 4,
                 'variants' => json_encode([
-                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40],
-                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50],
+                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -116,8 +116,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress1.jpeg']),
                 'category_id' => 1,
                 'variants' => json_encode([
-                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40],
-                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50],
+                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
             [
@@ -128,8 +128,8 @@ class ProductsSeeder extends Seeder
                 'images' => json_encode(['images/home/dress4.jpeg']),
                 'category_id' => 1,
                 'variants' => json_encode([
-                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40],
-                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50],
+                    ['size' => 'One Size', 'color' => 'Beige', 'stock_quantity' => 40,'image' => 'images/home/dress2.jpeg'],
+                    ['size' => 'One Size', 'color' => 'Brown', 'stock_quantity' => 50,'image' => 'images/home/dress2.jpeg'],
                 ]),
             ],
         ];

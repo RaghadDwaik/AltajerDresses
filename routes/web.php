@@ -32,8 +32,7 @@ Route::middleware('auth')->group(function () {
 
 
 use App\Http\Controllers\ProductController;
-
-
+use App\Http\Controllers\SocialAuthController;
 
 Route::get('/category/{id}', [HomeController::class, 'show'])->name('categories.show');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
@@ -63,4 +62,7 @@ Route::get('/test-session', function () {
 });
 
 
+
+Route::get('auth/google', [SocialAuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCallback']);
 require __DIR__.'/auth.php';

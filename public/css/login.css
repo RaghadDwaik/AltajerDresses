@@ -11,27 +11,42 @@
 /* Login Container */
 .login-container {
     background-color: #fff;
-    padding: 40px 30px;
+    padding: 40px 30px; /* Adjust padding to keep it balanced */
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 90%;
     text-align: center;
+    position: relative;
 }
 
-/* Circular Icon */
+/* Floating Icon */
 .icon-circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #8c5b36;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 16px;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Title */
+h2 {
+    color: #8B4513;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
 /* Input Fields */
 .input-field {
     position: relative;
@@ -49,11 +64,13 @@
     transition: border-color 0.3s ease;
 }
 
-.input-field input:focus {
-    border-color: #8c5b36;
+
+.input-field input::placeholder {
+    color: #8c5b36; /* Brown color for the placeholder */
+    text-align: right; /* Right-align placeholder text */
 }
 
-/* Center Icons in Input Fields */
+/* Input Field Icon */
 .input-icon {
     position: absolute;
     left: 10px;
@@ -63,28 +80,28 @@
     color: #8B4513;
     font-size: 1.2rem; /* Adjust icon size if needed */
 }
-
-/* Add margin to the container holding "Forgot your password?" and "Remember me" */
-.flex.items-center.justify-between.mb-4 {
-    margin-bottom: 20px; 
-    margin: 10px;/* Increase this value for more space below */
-}
-
-/* Add margin above the login button */
-button[type="submit"] {
-    margin-top: 20px; /* Increase this value for more space above */
-    padding: 10px 20px;
-     /* Adjust padding if needed */
-    /* You can add additional styles here for button appearance */
-}
-
-/* Labels */
 .input-label {
     font-size: 0.9rem;
     color: #8c5b36;
     text-align: left;
     margin-bottom: 5px;
     display: block;
+}
+
+/* Focus Style for Input */
+.input-field input:focus {
+    border-color: #8c5b36;
+    outline: none;
+}
+
+/* Remember Me and Forgot Password Section */
+.flex.items-center.justify-between.mb-4 {
+    margin-bottom: 20px;
+    color: #8c5b36;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Login Button */
@@ -96,17 +113,56 @@ button[type="submit"] {
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
 }
 
 .login-btn:hover {
     background-color: #71462b;
+    transform: scale(1.03);
+}
+
+/* OR Section */
+.or-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Space between login button and OR section */
+    color: #8c5b36;
+}
+
+.or-section div {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ddd;
+    margin: 0 10px;
+}
+
+/* Google Sign-In Button */
+.google-signin-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #DB4437;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    margin: 10px auto 0; /* Adds margin above Google button for spacing */
+}
+
+.google-signin-btn:hover {
+    background-color: #C33D2E;
+    transform: scale(1.1);
 }
 
 /* Footer Link */
 .footer-link {
-    margin-top: 15px;
     font-size: 0.9rem;
     color: #8c5b36;
     text-decoration: none;

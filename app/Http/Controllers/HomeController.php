@@ -15,10 +15,11 @@ class HomeController extends Controller
        
         $categories = Categories::all();
         $products = Products::inRandomOrder()->take(9)->get();
+        $user = Auth::user();
 
         // Assuming you want to fetch products related to this category:
     
-        return view('mainfiles.Home', compact('categories','products'));
+        return view('mainfiles.Home', compact('categories','products','user'));
        
     }
     public function show($id) {

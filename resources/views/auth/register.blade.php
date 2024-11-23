@@ -11,70 +11,67 @@
     <!-- Include Custom CSS -->
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-r from-blue-400 to-purple-500 min-h-screen flex items-center justify-center">
+<body>
     <div class="registration-section">
         <div class="registration-container">
             <!-- Circular Icon at the Top -->
             <div class="icon-circle">
-                <i class="fas fa-user fa-2x" style="color: #8B4513;"></i>
+                <i class="fas fa-user fa-2x"></i>
             </div>
             
-            <h2 class="text-3xl font-semibold text-center text-gray-800 mb-6" style="color: #8B4513;">Register</h2>
+            <h2>Register</h2>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
                 <!-- Name -->
                 <div class="input-field">
-                    <label for="name">Name</label>
                     <i class="fas fa-user input-icon"></i>
-                    <input id="name" type="text" name="name" required autofocus autocomplete="name" />
+                    <input id="name" type="text" name="name" placeholder="Name" required autofocus autocomplete="name" />
                 </div>
 
                 <!-- Email -->
                 <div class="input-field">
-                    <label for="email">Email</label>
                     <i class="fas fa-envelope input-icon"></i>
-                    <input id="email" type="email" name="email" required autocomplete="username" />
+                    <input id="email" type="email" name="email" placeholder="Email" required autocomplete="username" />
                 </div>
 
                 <!-- Phone Number -->
                 <div class="input-field">
-                    <label for="phone-num">Phone Number</label>
                     <i class="fas fa-phone input-icon"></i>
-                    <input id="phone-num" type="tel" name="phone-num" required autocomplete="phone-num" />
+                    <input id="phone-num" type="tel" name="phone-num" placeholder="Phone Number" required autocomplete="phone-num" />
                 </div>
 
                 <!-- Address -->
                 <div class="input-field">
-                    <label for="address">Address</label>
                     <i class="fas fa-map-marker-alt input-icon"></i>
-                    <input id="address" type="text" name="address" required autocomplete="address" />
+                    <input id="address" type="text" name="address" placeholder="Address" required autocomplete="address" />
                 </div>
 
                 <!-- Password -->
                 <div class="input-field">
-                    <label for="password">Password</label>
                     <i class="fas fa-lock input-icon"></i>
-                    <input id="password" type="password" name="password" required autocomplete="new-password" />
+                    <input id="password" type="password" name="password" placeholder="Password" required autocomplete="new-password" />
                 </div>
 
                 <!-- Confirm Password -->
                 <div class="input-field">
-                    <label for="password_confirmation">Confirm Password</label>
                     <i class="fas fa-lock input-icon"></i>
-                    <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" />
+                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password" />
                 </div>
 
                 <!-- Register Button -->
-                <div class="flex justify-center">
-                    <button type="submit" class="register-btn">Register</button>
-                </div>
+                <button type="submit" class="register-btn">Register</button>
 
                 <!-- Already Registered Link -->
-                <div class="mt-4 text-center">
+                <div class="mt-4">
                     <a href="{{ route('login') }}" class="already-registered">Already registered?</a>
                 </div>
+
+                <!-- Google Sign-Up Button -->
+                <a href="{{ route('auth.google') }}" class="google-signin-btn">
+                    <i class="fab fa-google"></i> Sign Up with Google
+                </a>
             </form>
         </div>
     </div>

@@ -67,25 +67,27 @@
     <div class="product-grid">
         @foreach($products as $product)
         <div class="product-card">
-            <div class="product-image">
-                @php
-                    $images = json_decode($product->images, true); // Decode the JSON to an array
-                    $firstImage = is_array($images) && count($images) > 0 ? $images[0] : 'default.jpg'; // Get the first image or use a default
-                @endphp
-                <img src="{{ asset($firstImage) }}" alt="{{ $product->product_name }}">
-            </div>
-            <div class="product-info">
-                <h3 class="product-name">{{ $product->product_name }}</h3>
-                <p class="product-description">{{ $product->description }}</p>
-                <p class="product-price">${{ number_format($product->price, 2) }}</p>
-            </div>
+            <a href="{{ route('products.show', ['id' => $product->id]) }}" class="product-link">
+                <div class="product-image">
+                    @php
+                        $images = json_decode($product->images, true);
+                        $firstImage = is_array($images) && count($images) > 0 ? $images[0] : 'default.jpg';
+                    @endphp
+                    <img src="{{ asset($firstImage) }}" alt="{{ $product->product_name }}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">{{ $product->product_name }}</h3>
+                    <p class="product-description">{{ $product->description }}</p>
+                    <p class="product-price">${{ number_format($product->price, 2) }}</p>
+                </div>
+            </a>
         </div>
         @endforeach
     </div>
 
     <!-- Show All Button -->
     <div class="show-all-container">
-    <a href="{{ route('products.index') }}" class="show-all-button">Show All</a>
+        <a href="{{ route('products.index') }}" class="show-all-button">Show All</a>
     </div>
 </section>
 
@@ -159,6 +161,16 @@
         <span class="carousel-dot" data-index="4"></span>
     </div>
 </section>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {

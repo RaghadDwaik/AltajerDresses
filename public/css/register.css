@@ -1,11 +1,20 @@
+/* General Styling */
+body {
+    background-color: #b58363;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
 /* Registration Section */
 .registration-section {
-    background-color: #b58363;
-    padding: 60px 0;
+    padding: 40px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    width: 100%;
 }
 
 /* Registration Container */
@@ -13,23 +22,37 @@
     background-color: #fff;
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 90%;
     text-align: center;
+    position: relative;
 }
 
-/* Circular Icon */
+/* Floating Icon */
 .icon-circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: #8c5b36;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto 16px;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h2 {
+    color: #8B4513;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 /* Input Fields */
@@ -39,7 +62,8 @@
 }
 
 .input-field input {
-    width: 350px;    padding: 12px 15px;
+    width: 350px;
+    padding: 12px 15px;
     padding-left: 40px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -48,28 +72,32 @@
     transition: border-color 0.3s ease;
 }
 
-.input-field input:focus {
-    border-color: #8c5b36;
+.input-field input::placeholder {
+    color: #8c5b36;
 }
 
-/* Center Icons in Input Fields */
-.input-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #8B4513;
-    padding-top: 20px;
-    font-size: 1.2rem; /* Adjust icon size if needed */
-}
-
-/* Labels */
 .input-field label {
     font-size: 0.9rem;
     color: #8c5b36;
     text-align: left;
     margin-bottom: 5px;
     display: block;
+}
+
+/* Input Field Icon */
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8B4513;
+    font-size: 1.2rem;
+}
+
+/* Focus Style for Input */
+.input-field input:focus {
+    border-color: #8c5b36;
+    outline: none;
 }
 
 /* Register Button */
@@ -81,22 +109,49 @@
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     width: 100%;
-    margin-top: 20px;
-    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
 }
 
 .register-btn:hover {
     background-color: #71462b;
+    transform: scale(1.03);
+}
+
+/* Google Sign-Up Button */
+.google-signin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #DB4437;
+    color: white;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.google-signin-btn i {
+    margin-right: 8px;
+}
+
+.google-signin-btn:hover {
+    background-color: #C33D2E;
+    transform: scale(1.03);
 }
 
 /* Already Registered Link */
 .already-registered {
-    margin-top: 15px;
     font-size: 0.9rem;
     color: #8c5b36;
     text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .already-registered:hover {
@@ -113,7 +168,7 @@
         font-size: 0.9rem;
     }
 
-    .register-btn {
+    .register-btn, .google-signin-btn {
         font-size: 0.9rem;
     }
 }

@@ -172,33 +172,60 @@ class CartController extends Controller
     return view('mainfiles.cart', compact('orders', 'cartCount', 'editProduct'));
 }
 
-    public function completeOrder(Request $request, $id)
-    {
-        // Validate and process the order completion logic
-        $validatedData = $request->validate([
-            'payment_method' => 'required|string',
-            'note' => 'nullable|string',
-        ]);
-    
-        // Fetch order details with related items
-        $orderDetail = Orders::with('orderItems.product')->find($id);
-    
-        // Check if order exists
-        if ($orderDetail) {
-            // Update order details based on payment method and note
-         /*   $orderDetail->payment_method = $validatedData['payment_method'];
-            $orderDetail->note = $validatedData['note'];*/
-            $orderDetail->status = 'Completed'; // Update status as necessary
-            $orderDetail->save();
-    
-            session()->forget('cart');
-    
+public function completeOrder(Request $request, $id)
+{
+    // Validate and process the order completion logic
+    $validatedData = $request->validate([
+        'payment_method' => 'required|string',
+        'note' => 'nullable|string',
+    ]);
 
-            return view('mainfiles.ordersConfirmation', compact('orderDetail'))->with('message', 'Order completed successfully!');
-        } else {
-            return redirect()->back()->withErrors('Order not found.');
+    // Fetch order details with related items
+    $orderDetail = Orders::with('orderItems')->find($id);
+
+    // Check if the order exists
+    if ($orderDetail) {
+        // Update order details
+        $orderDetail->status = 'Completed'; // Update status to "Completed"
+       
+        $orderDetail->save();
+
+        // Deduct stock quantities for each product in the order
+        foreach ($orderDetail->orderItems as $orderItem) {
+            // Fetch the specific ProductData for the size and color
+            $productData = ProductData::where('products_id', $orderItem->products_id)
+                ->where('size', $orderItem->size)
+                ->where('color', $orderItem->color)
+                ->first();
+
+            if ($productData) {
+                // Check stock availability
+                if ($productData->stock_quantity >= $orderItem->quantity) {
+                    $productData->stock_quantity -= $orderItem->quantity; // Reduce stock
+                    $productData->save(); // Save the updated stock quantity
+                } else {
+                    return redirect()->back()->withErrors(
+                        'Not enough stock for ' . $productData->product->product_name . ' (Size: ' . $orderItem->size . ', Color: ' . $orderItem->color . ').'
+                    );
+                }
+            } else {
+                return redirect()->back()->withErrors(
+                    'Product variant not found for ' . $orderItem->product->product_name . ' (Size: ' . $orderItem->size . ', Color: ' . $orderItem->color . ').'
+                );
+            }
         }
+
+        // Clear the cart session
+        session()->forget('cart');
+
+        // Return the order confirmation view
+        return view('mainfiles.ordersConfirmation', compact('orderDetail'))
+            ->with('message', 'Order completed successfully!');
+    } else {
+        return redirect()->back()->withErrors('Order not found.');
     }
+}
+
     
     
     public function destroy($id)
